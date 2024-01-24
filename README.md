@@ -1,46 +1,97 @@
-# Getting Started with Create React App
+## Part 1: Run the code
+step 1: Use `npm install` to install dependencies.
+step 2: Use `npm start` to run the code.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Part 2: Coding Exercise Completion Instructions
+### 2.1. Base Requirements：
+- Your code must use Typescript and the interface provided.
 
-## Available Scripts
+![Alt text](/public/screenshots/image-1.png)
 
-In the project directory, you can run:
+very field is required and should validated to the following conditions:
+`Use react-hook-form to complete the following functions.`
+- First name and last name should contain only A-B / a-b characters
+- Phone number should meet the Australian mobile number standards
+- Email should meet the standard xxxx@xxx.com format
+- Date of birth should be a date picker in the format DD/MM/YYYY
+- Should the user entry not meet the validation requirements, the UI should reflect the error appropriately.
 
-### `npm start`
+`Add customer page:`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Alt text](/public/screenshots/image-2.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Failure to fill out the form correctly will display an error.
 
-### `npm test`
+`(1) Case 1: click SUBMIT button without filling out the form.`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Alt text](/public/screenshots/image-3.png)
 
-### `npm run build`
+`(2) Case 2: fill out the form without click SUBMIT button.`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Alt text](/public/screenshots/image-4.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`(3) Case 3: fill out the form and then click SUBMIT button.`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Alt text](/public/screenshots/image-17.png)
 
-### `npm run eject`
+You must use the customers array provided and each customer should be stored as it's own JSON object.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Alt text](/public/screenshots/image-6.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Alt text](/public/screenshots/image-5.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Somewhere on the page display a list of the current customers.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`Home page (Showing 2 initial customers):`
 
-## Learn More
+![Alt text](/public/screenshots/image.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`Add a new customer (Lucy Ma):`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Alt text](/public/screenshots/image-7.png)
+
+### 2.2. Additional Requirements:
+- Use CSS to make it look nice for the user
+`Use MUI components and their styles.`
+
+- Be able to edit an existing customer
+`Edit the first customer named David Thomas:`
+
+![Alt text](/public/screenshots/image-8.png)
+
+`Edit all customer information (excluding ID):`
+
+![Alt text](/public/screenshots/image-9.png)
+
+`After editing (click UPDATE button):`
+
+![Alt text](/public/screenshots/image-10.png)
+
+- Be able to delete an existing customer
+
+`Delete the customer named Anna Martin:`
+
+![Alt text](/public/screenshots/image-11.png)
+
+
+### 2.2. Challenge:
+- Use the MUI library to make the page look like it belongs in a modern web-based software.
+
+`Use some MUI component to do this exercise, such as: Button, Box, Typography, TextField, etc.`
+![Alt text](/public/screenshots/image-12.png)
+
+![Alt text](/public/screenshots/image-13.png)
+
+### 2.3. Others:
+`(1) Use uuid to create customer's ID.`
+
+![Alt text](/public/screenshots/image-14.png)
+
+`(2) Use MUI Snackbar for showing success message when finished adding, editing, or deleting.`
+`e.g., deleting a customer:`
+
+![Alt text](/public/screenshots/image-15.png)
+
+`(3) Click CANCEL button to cancel and go back to Home page and show the CustomerList page.`
+
+![Alt text](/public/screenshots/image-16.png)
