@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { ICustomer } from "./Customer.type";
+import CustomerModal from "./CustomerModal";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -35,8 +36,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 // Define data types
 type Props = {
   list: ICustomer[];
-  handleDeleteCustomer: (data: ICustomer) => void;
   handleEditCustomer: (data: ICustomer) => void;
+  handleDeleteCustomer: (data: ICustomer) => void;
   handleOpenSnackbar: () => void;
 };
 
@@ -50,34 +51,35 @@ export default function CustomerList(props: Props) {
       {/* Check the length of the customer list */}
       {list.length !== 0 ? (
         // If the customer list is not empty, list them.
-        <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 700 }} aria-label="customized table">
+        <TableContainer component={Paper} sx={{ maxWidth: "900px" }}>
+          <Table aria-label="customized table">
             <TableHead>
               <TableRow>
-                <StyledTableCell>ID</StyledTableCell>
-                <StyledTableCell>Name</StyledTableCell>
-                <StyledTableCell>Phone Number</StyledTableCell>
+                <StyledTableCell>First Name</StyledTableCell>
+                <StyledTableCell>Last Name</StyledTableCell>
                 <StyledTableCell>Email</StyledTableCell>
-                <StyledTableCell>DOB</StyledTableCell>
-                <StyledTableCell>Action</StyledTableCell>
+                <StyledTableCell align="center">Action</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {list?.map((customer) => (
-                <StyledTableRow key={customer.id}>
-                  <StyledTableCell component="th" scope="row">
-                    {customer.id}
-                  </StyledTableCell>
-                  <StyledTableCell>
-                    {customer.lastName}, {customer.firstName}
-                  </StyledTableCell>
-                  <StyledTableCell>{customer.phoneNumber}</StyledTableCell>
+                <StyledTableRow
+                  key={customer.id}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                >
+                  <StyledTableCell>{customer.lastName}</StyledTableCell>
+                  <StyledTableCell>{customer.firstName}</StyledTableCell>
                   <StyledTableCell>{customer.email}</StyledTableCell>
-                  <StyledTableCell>{`${customer.dateOfBirth.split("-")[2]}/${
-                    customer.dateOfBirth.split("-")[1]
-                  }/${customer.dateOfBirth.split("-")[0]}`}</StyledTableCell>
-                  <StyledTableCell>
-                    <Stack direction="row" spacing={2}>
+
+                  <StyledTableCell align="center">
+                    <Stack
+                      direction="row"
+                      spacing={2}
+                      sx={{ justifyContent: "center" }}
+                    >
+                      {/* View the customer */}
+                      <CustomerModal customer={customer} />
+
                       {/* Edit the customer */}
                       <Button
                         variant="contained"

@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@material-ui/core/Typography";
 import { IconButton, Snackbar } from "@mui/material";
+import Divider from "@mui/material/Divider";
 import { Close } from "@mui/icons-material";
 import AddCustomer from "./AddCustomer";
 import EditCustomer from "./EditCustomer";
@@ -101,7 +102,7 @@ export default function Home() {
         <Typography component="h1" variant="h4">
           CUSTOMER MANAGEMENT SYSTEM
         </Typography>
-
+        <Divider style={{ width: "100%" }} />
         {/* Show the AddCustomer page */}
         {showAddCustomerPage === PageStatusEnum.listCustomer && (
           <>

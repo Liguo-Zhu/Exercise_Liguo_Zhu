@@ -1,6 +1,6 @@
 // Customer interface
 export interface ICustomer {
-  id: string; // Use uuid to create unique id, so change id type from number to string.
+  id: string; // Use uuid to create unique id
   firstName: string;
   lastName: string;
   phoneNumber: string;
