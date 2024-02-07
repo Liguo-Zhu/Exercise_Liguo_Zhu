@@ -2,8 +2,7 @@
 step 1: Use `npm install` to install dependencies.
 step 2: Use `npm start` to run the code.
 
-### Part 2: Instructions
-### 2.1. Base Requirements：
+### Part 2: Instructions CRUD
 - Use Typescript and the interface provided.
 
 - Every field is required and should validated to the following conditions:
